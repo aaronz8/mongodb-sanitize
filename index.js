@@ -8,7 +8,7 @@ exports.sanitize = function (data) {
         });
         delete data[key];
       } else if (data[key] instanceof Object) {
-        sanitize(data[key]);
+        exports.sanitize(data[key]);
       }
     }
   }
