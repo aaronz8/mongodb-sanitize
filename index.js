@@ -19,5 +19,8 @@ module.exports = function (req, res, next) {
   if (req.body) {
     req.body = exports.sanitize(req.body);
   }
+  if (req.query) {
+    req.query = exports.sanitize(req.query);
+  }
   return next();
 }

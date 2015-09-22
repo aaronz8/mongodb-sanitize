@@ -1,7 +1,7 @@
 {
   "name": "mongodb-sanitize",
   "version": "0.0.1",
-  "description": "Middleware to sanitize request body against mongodb query selector injections",
+  "description": "Middleware to sanitize request body and query against mongodb query selector injections",
   "main": "index.js",
   "scripts": {
     "test": "./node_modules/mocha/bin/mocha test.js"
