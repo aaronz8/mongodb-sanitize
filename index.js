@@ -16,11 +16,16 @@ exports.sanitize = function (data) {
 }
 
 module.exports = function (req, res, next) {
-  if (req.body) {
-    req.body = exports.sanitize(req.body);
+  try {
+    if (req.body) {
+      req.body = exports.sanitize(req.body);
+    }
+    if (req.query) {
+      req.query = exports.sanitize(req.query);
+    }
+  } catch (err) {
+    return next(err);
   }
-  if (req.query) {
-    req.query = exports.sanitize(req.query);
-  }
+
   return next();
 }
